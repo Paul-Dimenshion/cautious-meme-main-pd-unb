@@ -13,7 +13,7 @@
     "client": "cd client && npm start"
   },
   "keywords": [],
-  "author": "",
+  "author": "Pavlo Demenshyn",
   "license": "ISC",
   "dependencies": {
     "babel": "^6.23.0",
