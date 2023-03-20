@@ -41,7 +41,7 @@ The following image shows the application's `IndexedDB` storage:
 
 ![Screenshot of Text Editor]()
 
-## - Deployed Link:
+## Deployed Link:
 
 - [Deployed Link](https://pwa-text-editor-pd-unb.herokuapp.com/)
 
