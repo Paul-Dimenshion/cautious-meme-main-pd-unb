@@ -1,5 +1,7 @@
 import { openDB } from 'idb';
 
+/* The initdb function is executed when the code is first run,
+and it checks if the "jate" database already exists before creating it if it does not exist. */
 const initdb = async () =>
   openDB('jate', 1, {
     upgrade(db) {
@@ -12,7 +14,7 @@ const initdb = async () =>
     },
   });
 
-// save content to db
+// This function saves a piece of content to the "jate" object store with an id of 1.
 export const putDb = async (content) => {
   const jateDb = await openDB('jate', 1);
   const trxn = jateDb.transaction('jate', 'readwrite');
@@ -22,7 +24,7 @@ export const putDb = async (content) => {
   console.log('content saved: ', result);
 };
 
-// get all content from db
+// This function retrieves all the content stored in the "jate" object store.
 export const getDb = async () => {
   const jateDb = await openDB('jate', 1);
   const trxn = jateDb.transaction('jate', 'readonly');
@@ -33,7 +35,7 @@ export const getDb = async () => {
   return result?.value;
 };
 
-// delete content from db
+// This function deletes a piece of content from the "jate" object store based on the given id.
 export const deleteDb = async () => {
   const jateDb = await openDB('jate', 1);
   const trxn = jateDb.transaction('jate', 'readwrite');
