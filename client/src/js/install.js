@@ -1,21 +1,31 @@
-const butInstall = document.getElementById('buttonInstall');
+// The first line declares a constant variable butInstallEl and assigns it to the DOM element with the ID buttonInstallEl.
+const butInstallEl = document.getElementById('buttonInstallEl'); 
 
-// for installing the PWA, event listener triggers btnInstalEl to show
+/* The beforeinstallprompt event listener is added to the window object. 
+This event is fired when the browser determines that it's a good time to show the user a prompt to install the PWA. 
+When this event is fired, the event object is stored in window.deferredPrompt, 
+and the hidden class is removed from the btnInstallEl element to show it. */
 window.addEventListener('beforeinstallprompt', (event) => {
     window.deferredPrompt = event;
-    butInstall.classList.toggle('hidden', false);
+    btnInstallEl.classList.toggle('hidden', false);
 });
 
-butInstall.addEventListener('click', async () => {
-    const btnEvent = window.deferredPrompt;
-    if (!btnEvent) {
+/* The click event listener is added to the butInstallEl element. 
+When the button is clicked, the code checks if window.deferredPrompt exists. 
+If it does, it calls the prompt() method on it to show the install prompt.
+After that, window.deferredPrompt is set to null, and the hidden class is added back to the btnInstallEl element to hide it again. */
+butInstallEl.addEventListener('click', async () => {
+    const promptEvent = window.deferredPrompt;
+    if (!promptEvent) {
         return;
     }
-    btnEvent.prompt();
+    promptEvent.prompt();
     window.deferredPrompt = null;
-    butInstall.classList.toggle('hidden', true);
+    btnInstallEl.classList.toggle('hidden', true);
 });
 
+/* The appinstalled event listener is added to the window object. This event is fired when the PWA is successfully installed. 
+When this event is fired, window.deferredPrompt is set to null to ensure that the prompt is not shown again. */
 window.addEventListener('appinstalled', (event) => {
     window.deferredPrompt = null;
 });
