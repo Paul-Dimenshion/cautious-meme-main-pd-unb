@@ -27,19 +27,19 @@ To use this app go to the link provided below.  For offline use, go to the link 
 
 The following image shows the application retrieves database, injecting to editor, and successfully saving to DB.:  
 
-![Screenshot of Text Editor]()
+![Screenshot of Text Editor](/client/src/images/screen.jpg)
 
 The following image shows the application's `manifest.json` file:  
 
-![Screenshot of Text Editor]()
+![Screenshot of Text Editor](/client/src/images/manifest.jpg)
 
 The following image shows the application's registered `service worker`:  
 
-![Screenshot of Text Editor]()
+![Screenshot of Text Editor](/client/src/images/service-workers.jpg)
 
 The following image shows the application's `IndexedDB` storage:  
 
-![Screenshot of Text Editor]()
+![Screenshot of Text Editor](/client/src/images/storage.jpg)
 
 ## Deployed Link:
 
